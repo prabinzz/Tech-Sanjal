@@ -19,7 +19,7 @@ function getFeed(url){
     var temp = new rssTree(channel.find("channel>title").text(), channel.find("channel>link").text(),
       channel.find("channel>description").text());
     temp.loadedIn = new Date();
-    localStorage.loadedIn = new Date();
+//     localStorage.loadedIn = new Date();
     var items = $xml.find("item");
     items.each(function(){
       var i = $(this);
@@ -80,7 +80,7 @@ function notIfy(lFeed, lViewedID, lNotID){
       var t = new Date(i.date);
       var time = /(..)(:..)/.exec(t);     // The prettyprinted time.
       var hour = time[1] % 12 || 12;                     // The prettyprinted hour.
-      var period = time[1] < 12 ? 'a.m.' : 'p.m.';       // The period of the day.
+      var period = time[1] < 12 ? 'A.M.' : 'P.M.';       // The period of the day.
       i.title[0]=i.title[0].toUpperCase();
       if(localStorage.firstLoad != "true"){
         new Notification(hour + time[2] + ' ' + period+ "  "+t.getFullYear()+

@@ -1,0 +1,42 @@
+body{
+  background-image: url("/img/background.jpg");
+  /*background-position: center;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  back
+}
+#wrapper{
+  width: 400px;
+  margin: 0px auto;
+  margin-top: 50px;
+  background: #3e3e3e;
+  padding: 20px;
+  opacity: 0.9;
+  background-blend-mode: overlay;
+  border-radius: 10px;
+}
+#wrapper> *{
+  opacity: 1;
+}
+label{
+  color: #fafafa;
+}
+.note{
+  color: rgb(200,100,100);
+  margin-top: 5px;
+  font-style: italic;
+  font-size: .9em;
+}
+.head{
+  color: #50d07d;
+  text-align: center;
+}
+
+.footer{
+  color: rgba(230,230,230,1);
+  font-size: 20px;
+  display: inline-block;
+  position: relative;
+  right: -60%;
+  bottom: -50px;
+}

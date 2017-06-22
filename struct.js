@@ -1,9 +1,7 @@
-function rssTree(title, link , discription, rssItems ){
-  // rssTree object used to store rss feed deta
-  this.title = title;
-  this.link = link;
-  this.discription = discription;
-  if(rssItems && typeOf(rssItems) == "object"){
+
+function rssTree(rssItems ){
+  // rssTree object used to store rss feed data
+  if(rssItems){
     // if Items are given as argument
     this.items = rssItems;
   }else{
@@ -11,13 +9,21 @@ function rssTree(title, link , discription, rssItems ){
   }
 }
 
+rssTree.prototype.getId = function (id) {
+  for (i of this.items) {
+    if(i.id == id){
+      return i;
+    }
+  }
+  return false;
+};
+
 function getFeed(url){
   console.log("fetching feeds");
   $.get(url, function(data){
     $xml = $(data);
     var channel = $xml.find("channel");
-    var temp = new rssTree(channel.find("channel>title").text(), channel.find("channel>link").text(),
-      channel.find("channel>description").text());
+    var temp = new rssTree();
     temp.loadedIn = new Date();
 //     localStorage.loadedIn = new Date();
     var items = $xml.find("item");
@@ -37,7 +43,6 @@ function getFeed(url){
         item.new = true;
       }
       temp.items.push(item);
-      console.log(item);
     }) // items.each end>>>>
 
     if(!localStorage.lastViewedID){
@@ -50,7 +55,7 @@ function getFeed(url){
 
 function showUI(data){
   // UI related code.
-  var parent = document.getElementsByTagName('body')[0];
+  var parent = document.getElementById('content');
   parent.innerHTML+=""
   var loaded = 0;
   for (i of data.items) {
@@ -83,16 +88,12 @@ function notIfy(lFeed, lViewedID, lNotID){
       var period = time[1] < 12 ? 'A.M.' : 'P.M.';       // The period of the day.
       i.title[0]=i.title[0].toUpperCase();
       if(localStorage.firstLoad != "true"){
-        new Notification(hour + time[2] + ' ' + period+ "  "+t.getFullYear()+
-        "/"+t.getMonth()+"/"+t.getDay(), {
-          icon: './img/icon.png',
-          body: i.title,
-        });
+        notifyCore(hour + time[2] + ' ' + period+ "  "+t.getFullYear()+
+        "/"+t.getMonth()+"/"+t.getDay(),'./img/icon.png',i.title, i
+        )
       }else{
-        new Notification("Setup Complet.",{
-          icon: "./img/icon.png",
-          body: "Thanks for installing (missing.byt3). For more info contact me > missigg.byt3@gmai.com ",
-        })
+        notifyCore("Setup done.","./img/icon.png","Thanks for installing our official extension",
+        )
         localStorage.firstLoad = false;
         break;
       }
@@ -101,6 +102,21 @@ function notIfy(lFeed, lViewedID, lNotID){
   if (temp>0) {
     chrome.browserAction.setBadgeText({"text": temp.toString() });
   }
+}
+
+function notifyCore(title, icon, body, item){
+  var options = {
+    type : "basic",
+    title : title,
+    message : body,
+    iconUrl: icon
+  }
+  if (!item) {
+    chrome.notifications.create("info", options, function(){});
+  }else{
+    chrome.notifications.create(item.id, options, function(){});
+  }
+
 }
 
 function itemParse(item, parent){

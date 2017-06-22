@@ -1,8 +1,8 @@
 {
   "name": "Tech Sanjal",
-  "description": "Chrome exetnsion to get quick question update from tech snjal community",
+  "description": "A chrome extension of TechSanjal for desktop notification and instant access on questions and popular answers.",
   "manifest_version": 2,
-  "version": "1.1",
+  "version": "2.0",
   "icons":{
     "128": "./img/icon.png"
   },

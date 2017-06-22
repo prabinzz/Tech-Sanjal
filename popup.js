@@ -1,7 +1,9 @@
 
 // var host = "http://127.0.0.1:2222/test/feed.rss";
 var host = "http://techsanjal.com/feed/questions.rss";
-var lastfeed = JSON.parse(localStorage.lastFeed);
+
+var lastfeed = JSON.parse(localStorage.lastFeed)
+
   // $("#demo")[0].innerHTML=JSON.parse(localStorage.lastFeed).loadedIn;
 
 // var rss;

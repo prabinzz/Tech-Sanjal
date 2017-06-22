@@ -20,9 +20,15 @@ if(!localStorage.firstLoad){
   localStorage.firstLoad = false;
 }
 if(localStorage.lastfeed){
-   var lastfeed = JSON.parse(localStorage.lastFeed);
+  var lastfeed = JSON.parse(localStorage.lastFeed);
 }else{
-getFeed(localStorage.host);
+  getFeed(localStorage.host);
+}
+
+try {
+  lastFeedTree = new rssTree(JSON.parse(localStorage.lastFeed).items);
+} catch (e) {
+  setTimeout(function(){console.log("sleeping zZz")} ,500)
 }
 var interval = 0;
 setInterval(function () {
@@ -33,3 +39,21 @@ setInterval(function () {
     interval = 0;
   }
 }, 1000);
+
+notifyEventHandler();
+
+
+// functions
+function notifyEventHandler(){
+  chrome.notifications.onClicked.addListener(function(id){
+    if(id != "info"){
+      try {
+        var temp=lastFeedTree.getId(id);
+      } catch (e) {
+        lastFeedTree = new rssTree(JSON.parse(localStorage.lastFeed).items);
+      } finally {
+        chrome.tabs.create({url: temp.link});
+      }
+    }
+  });
+}

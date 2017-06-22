@@ -1,9 +1,9 @@
 body{
-  background-image: url("/img/background.jpg");
-  /*background-position: center;*/
-  background-repeat: no-repeat;
-  background-size: cover;
-  back
+  background: lightgray;
+  background-image: url("/img/icon.png");
+  image-resolution: snap;
+  background-position: center;
+  background-repeat: repeat;
 }
 #wrapper{
   width: 400px;
@@ -25,7 +25,6 @@ label{
   color: rgb(200,100,100);
   margin-top: 5px;
   font-style: italic;
-  font-size: .9em;
 }
 .head{
   color: #50d07d;

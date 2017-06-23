@@ -48,6 +48,7 @@ function getFeed(url){
     if(!localStorage.lastViewedID){
       localStorage.lastViewedID=0;
     }
+    lastFeedTree = new rssTree(temp.items);
     notIfy(temp, Number(localStorage.lastViewedID), Number(localStorage.lastNotificattionId));
     localStorage.lastFeed = JSON.stringify(temp);
   })
@@ -92,7 +93,7 @@ function notIfy(lFeed, lViewedID, lNotID){
         "/"+t.getMonth()+"/"+t.getDay(),'./img/icon.png',i.title, i
         )
       }else{
-        notifyCore("Setup done.","./img/icon.png","Thanks for installing our official extension",
+        notifyCore("Setup Done.","./img/icon.png","Thanks for installing our official extension",
         )
         localStorage.firstLoad = false;
         break;
@@ -103,6 +104,7 @@ function notIfy(lFeed, lViewedID, lNotID){
     chrome.browserAction.setBadgeText({"text": temp.toString() });
   }
 }
+
 
 function notifyCore(title, icon, body, item){
   var options = {

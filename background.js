@@ -1,5 +1,5 @@
-// localStorage.host = "http://127.0.0.1:2222/test/feed.rss";
 // localStorage.host = "http://techsanjal.com/feed/questions.rss";
+// localStorage.host = "http://127.0.0.1:2222/test/feed.rss";
 
 // Set variables for the first time;
 if (!localStorage.interval) {
@@ -52,6 +52,9 @@ function notifyEventHandler(){
       } catch (e) {
         lastFeedTree = new rssTree(JSON.parse(localStorage.lastFeed).items);
       } finally {
+        chrome.notifications.clear(id,function(){
+          console.log("notification cleared");
+        })
         chrome.tabs.create({url: temp.link});
       }
     }

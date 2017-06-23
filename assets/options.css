@@ -1,10 +1,10 @@
 body{
   background: lightgray;
   background-image: url("/img/icon.png");
-  image-resolution: snap;
   background-position: center;
   background-repeat: repeat;
 }
+
 #wrapper{
   width: 400px;
   margin: 0px auto;
@@ -12,12 +12,9 @@ body{
   background: #3e3e3e;
   padding: 20px;
   opacity: 0.9;
-  background-blend-mode: overlay;
   border-radius: 10px;
 }
-#wrapper> *{
-  opacity: 1;
-}
+
 label{
   color: #fafafa;
 }

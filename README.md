@@ -9,7 +9,7 @@ Currently this extension is in development phase so, It is not available in chro
   2. Open chrome and navigate to **Options>More tools>extensions** or go to **chrome://extensions** form URL.
   3. Active **developer mode** by clicking  developer mode checkbox. If you are already in developer mode ignore this step.
   4. Click on load unpacked extensions and navigate to the folder you cloned or extracted in first step.
-  5. If configured properly, you will see new dictionary like icon on the top right corner of you chrome.
+  5. If configured properly, you will see new  techsanjal icon on the top right corner of you chrome.
 
 ### Features
 

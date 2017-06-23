@@ -2,7 +2,7 @@
   "name": "Tech Sanjal",
   "description": "A chrome extension of TechSanjal for desktop notification and instant access on questions and popular answers.",
   "manifest_version": 2,
-  "version": "2.0",
+  "version": "2.1",
   "icons":{
     "128": "./img/icon.png"
   },

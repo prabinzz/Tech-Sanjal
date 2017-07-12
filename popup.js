@@ -1,11 +1,11 @@
 
-var lastfeed = JSON.parse(localStorage.lastFeed)
-
+var lastfeed = JSON.parse(localStorage.lastFeed);
 document.addEventListener("DOMContentLoaded",function(){
   // getFeed(localStorage.host);
   clearBadge(lastfeed);
   showUI(lastfeed);
   linkFunc();
+
 })
 
 function clearBadge(lastFeed){

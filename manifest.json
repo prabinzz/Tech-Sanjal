@@ -1,30 +1,21 @@
 {
-  "name": "Tech Sanjal",
-  "description": "A chrome extension of TechSanjal for desktop notification and instant access on questions and popular answers.",
-  "manifest_version": 2,
-  "version": "2.1",
-  "icons":{
-    "128": "./img/icon.png"
-  },
-
-  "browser_action":{
-    "default_icon": "./img/icon.png",
-    "default_popup": "popup.html"
-  },
-  "options_page": "options.html",
-  "background":{
-    "page": "background.html"
-  },
-  "permissions":[
-    "tabs",
-    "storage",
-    "activeTab",
-    "http://*/*",
-    "https://*/*",
-    "notifications"
-  ],
-  "web_accessible_resources": [
-    "./img/icon.png",
-    "./img/background.jpg"
-  ]
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "./img/icon.png",
+      "default_popup": "popup.html"
+   },
+   "description": "A chrome extension of TechSanjal for desktop notification and instant access on questions and popular answers.",
+   "icons": {
+      "128": "./img/icon.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkASKWrySZp7nfsBiMb6/VrwnpFOR4OsNGPnbfhzRQ1y5oeOZtB8fb7DLUQj1zqU+Dy9FCq0WJJJ132odbrWXsA+ySde9NWzV+YckUqn7qauVGGniYskBrqPReWHqk+haMXrhRhdNVP3OOFF8CAWDjK2HOAY1tBR+B51+Y6AVjDzK2jULQUJsjKd23LbEZxQi9QH00EuaH1QjMummFFjMs54Othi6zl7Awi+U6XdsQ9Zphx8c3ycxMDr2raAwnyxbG7EPLptFIpmIqkZya1fFGcNpkQEhhUVVMt40Slyv8ofE6pPHlL1oC/8Wx3FfNQFtH581vyvaRQ8hrsLJZImuUwIDAQAB",
+   "manifest_version": 2,
+   "name": "Tech Sanjal",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "storage", "activeTab", "http://*/*", "https://*/*", "notifications" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.3",
+   "web_accessible_resources": [ "./img/icon.png", "./img/background.jpg" ]
 }

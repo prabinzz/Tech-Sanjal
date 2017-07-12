@@ -124,6 +124,9 @@ function itemParse(item, parent){
   item.title = upper(item.title);
   var temp='' ;
   var date = new Date(item.date);
+  var time = /(..)(:..)/.exec(date);
+  var hour = time[1] % 12 || 12;
+  var period = time[1]< 12 ? 'A.M.' : 'P.M.';
   // console.log(item);
   temp+="<a href='"+item.link+"'><div id='item'><div class='head'>"+
   item.title+
@@ -138,11 +141,13 @@ function itemParse(item, parent){
     item.category +
     "</div>" +
     "<div class='date'>" +
-    date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay() + "  " +
-    date.getHours() + ":" + date.getMinutes() +
+    date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay() +
     "</div>" +
-    "</div>" +
-    " </div></div></a>";
+    "<div class='time'>"+
+    hour+time[2]+" "+period+
+    "</div>"+
+    "</div>"+
+    "</div></div></a>";
   parent.innerHTML+=temp;
 }
 

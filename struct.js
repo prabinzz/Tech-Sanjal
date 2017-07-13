@@ -124,6 +124,12 @@ function itemParse(item, parent){
   item.title = upper(item.title);
   var temp='' ;
   var date = new Date(item.date);
+  var now = new Date();
+  var isoDate = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay();
+  var isoDate2 = now.getFullYear() + "/" + now.getMonth() + "/" + now.getDay();
+  if(isoDate == isoDate2){
+    isoDate = "Today";
+  }
   var time = /(..)(:..)/.exec(date);
   var hour = time[1] % 12 || 12;
   var period = time[1]< 12 ? 'A.M.' : 'P.M.';
@@ -141,7 +147,7 @@ function itemParse(item, parent){
     item.category +
     "</div>" +
     "<div class='date'>" +
-    date.getFullYear() + "/" + date.getMonth() + "/" + date.getDay() +
+    isoDate+
     "</div>" +
     "<div class='time'>"+
     hour+time[2]+" "+period+

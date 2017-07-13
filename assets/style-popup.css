@@ -72,29 +72,33 @@ a:hover{
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background: rgb(84, 187, 71);
   margin-left: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 .footer > .time{
   padding: 5px;
   border-radius: 5px;
   width: 90px;
   text-align: center;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
   display: inline-block;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background: rgb(187, 71, 71);
-  margin-left: 20px;
+  /*margin-left: 20px;*/
 }
 
 .category:hover{
-  background-color: #333;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5) inset;
+  background-color: #464646;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5) inset;
 }
 .date:hover{
-  background-color: #333;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5) inset;
+  background-color: #464646;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5) inset;
 }
 .time:hover{
-  background-color: #333;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5) inset;
+  background-color: #464646;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5) inset;
 }
 
 #item:hover{

@@ -1,9 +1,9 @@
 # Tech-Sanjal 
-Chrome extension for techsanjal.com community.
+Chrome extension for techsanjal.com community. [click here](https://chrome.google.com/webstore/detail/tech-sanjal/mfkcjgocecgcgeeledjoalbbijaicmgh) to install from chrome store.
 
 
 ### How to install?
-Currently this extension is in development phase so, It is not available in chrome store. You have to manually install it in order to use/test. Follow following steps to install.
+ To manually install it in order to use/test. Follow following steps.
 
   1. Either get zip file and extract the folder  or clone this repo.
   2. Open chrome and navigate to **Options>More tools>extensions** or go to **chrome://extensions** form URL.
